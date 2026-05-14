@@ -89,5 +89,3 @@ Esta solução comprova a viabilidade da aplicação prática de Inteligência A
 - **Escalabilidade:** Uma ferramenta web leve que elimina a necessidade de softwares locais pesados.
 - **Confiabilidade:** Padronização diagnóstica através de um algoritmo robusto contra variabilidade clínica.
 - **Eficiência:** Redução drástica de esforço manual em cálculos de triagem nutricional.
-
-O projeto evidencia a capacidade analítica do Grupo 45 em transformar dados complexos em um produto funcional, preditivo e pronto para o ambiente de saúde real.
