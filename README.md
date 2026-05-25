@@ -2,6 +2,8 @@
 
 ## Tech Challenge FIAP (Fase 4) - Grupo 45 | Machine Learning aplicado à Saúde
 
+🔗 **Acesse a aplicação em produção:** [Clique aqui para abrir o Sistema](https://notebooks-grupo45-xngddkmfv7koeyvmubsqco.streamlit.app/)
+
 ---
 
 ## 📌 Visão Geral Executiva
@@ -76,6 +78,8 @@ A solução foi arquitetada utilizando práticas sólidas de Engenharia de Dados
 ## 🚀 Deploy e Produção
 
 A aplicação encontra-se publicada na nuvem através do **Streamlit Community Cloud**, com um fluxo de deploy contínuo (CI/CD) conectado diretamente à branch `main` deste repositório.
+
+**Link de Acesso:** [https://notebooks-grupo45-xngddkmfv7koeyvmubsqco.streamlit.app/](https://notebooks-grupo45-xngddkmfv7koeyvmubsqco.streamlit.app/)
 
 **Diferenciais da Infraestrutura:**
 - **Sincronização de Versões:** O arquivo `requirements.txt` trava as versões exatas de todas as bibliotecas (incluindo o motor gráfico e o gerador de planilhas), eliminando incompatibilidades do modelo em produção.
