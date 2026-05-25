@@ -10,7 +10,7 @@ Este projeto foi desenvolvido como parte do Tech Challenge da FIAP (Fase 4) com 
 
 A solução consiste em um modelo preditivo treinado para classificar o risco e a classe de peso de um paciente com base em variáveis demográficas, comportamentais, histórico familiar e dados físicos. O algoritmo foi empacotado e disponibilizado em produção por meio de uma aplicação web interativa construída com a framework Streamlit.
 
-O objetivo estratégico da solução é mitigar a subjetividade em avaliações limítrofes, acelerar a triagem de pacientes e fornecer uma ferramenta baseada em dados para suporte diagnóstico.
+O objetivo estratégico da solução é mitigar a subjetividade em avaliações limítrofes, acelerar a triagem de pacientes e fornecer uma ferramenta baseada em dados para suporte diagnóstico qualificado.
 
 ---
 
@@ -18,10 +18,10 @@ O objetivo estratégico da solução é mitigar a subjetividade em avaliações 
 
 Desenvolver um sistema inteligente e de alta performance capaz de:
 
-- Auxiliar profissionais de saúde na identificação precoce do nível de sobrepeso/obesidade.
-- Automatizar o cálculo de indicadores cruciais (como o IMC) no backend.
+- Auxiliar profissionais de saúde na identificação precoce do nível de sobrepeso/obesidade de forma padronizada.
+- Automatizar o cálculo de indicadores cruciais (como o IMC) e variáveis compostas de estilo de vida no backend.
 - Apoiar estratégias preventivas e tratamentos personalizados.
-- Transformar dados brutos de saúde em informação acionável em tempo real.
+- Transformar dados brutos de rotina e saúde em informação clínica acionável em tempo real.
 
 ---
 
@@ -30,20 +30,20 @@ Desenvolver um sistema inteligente e de alta performance capaz de:
 A solução foi arquitetada utilizando práticas sólidas de Engenharia de Dados e Ciência de Dados, dividida em duas camadas principais:
 
 ### 1️⃣ Camada de Machine Learning (Modelagem)
-- **Sanitização e Engenharia de Features:** Tratamento de dados, tradução do dicionário de dados para o contexto local, remoção de ruídos decimais e criação de features de domínio (IMC).
-- **Pipeline de Transformação:** Utilização de `ColumnTransformer` com `StandardScaler` (padronização numérica) e `OneHotEncoder` (binarização categórica mitigando *Data Leakage*).
-- **Algoritmo Preditivo:** Implementação de um modelo ensemble `RandomForestClassifier` com pesos balanceados (`class_weight='balanced'`).
-- **Alta Performance:** O modelo atingiu uma **acurácia global de 98.58%** nos dados de teste.
+- **Seleção de Features Estratégica:** Remoção intencional das variáveis brutas de "Peso" e "Altura" do conjunto de treino. Esta abordagem elimina o viés de multicolinearidade e força o algoritmo a avaliar o quadro clínico cruzando a proporção corporal (`IMC`) com as rotinas comportamentais do paciente.
+- **Pipeline de Transformação:** Utilização de `ColumnTransformer` associado ao `RobustScaler` (para tratar dados numéricos com maior tolerância a discrepâncias) e `OneHotEncoder` (binarização categórica), mitigando completamente o risco de *Data Leakage*.
+- **Algoritmo Preditivo:** Implementação de um modelo ensemble `RandomForestClassifier` com pesos balanceados (`class_weight='balanced'`) e restrições de profundidade para evitar o sobreajuste (overfitting).
+- **Alta Performance:** O modelo calibrado atingiu uma **acurácia global de 94.64%** nos dados de validação.
 - **Artefato Gerado:** O pipeline completo foi serializado no arquivo:
   `modelo_obesidade_rf.pkl`
 
 ### 2️⃣ Camada de Aplicação Web (Interface)
-- Desenvolvida integralmente em **Streamlit**.
-- Interface interativa, responsiva e dividida em colunas estruturadas para otimizar o fluxo de preenchimento médico.
-- Processamento automático das entradas com injeção do cálculo de IMC em tempo real no backend.
-- Exibição instantânea do diagnóstico estimado pela Inteligência Artificial.
-- Artefato principal da interface:
-  `app.py`
+- Desenvolvida integralmente em **Streamlit** focando em usabilidade clínica e produtividade.
+- **Entrada Nominativa:** Inclusão de campo para identificação do paciente, permitindo centralizar a consulta.
+- **Interface Segura (Campos Vazios):** Todos os seletores e campos numéricos iniciam completamente limpos (`None` / `""`). Isso elimina valores padrões na tela e obriga o profissional de saúde a preencher cada informação de forma consciente, evitando diagnósticos acidentais.
+- **Mapeamento Reverso no Backend:** Implementação de um dicionário de conversão oculto no código. O usuário seleciona opções textuais intuitivas na tela (ex: "Sempre", "Raramente"), e o sistema traduz automaticamente para os códigos numéricos exatos que o modelo exige.
+- **Cálculo de Índices em Tempo Real:** Processamento automático das entradas com injeção instantânea do cálculo do IMC e do cálculo cruzado de score de atividade física.
+- **Exportação de Relatórios:** Geração automatizada de relatórios em formato Excel (`.xlsx`) contendo os dados coletados do paciente e o respectivo diagnóstico clínico, facilitando o arquivamento ou a impressão dos resultados.
 
 ---
 
@@ -67,6 +67,7 @@ A solução foi arquitetada utilizando práticas sólidas de Engenharia de Dados
 - **Machine Learning:** Scikit-Learn
 - **Serialização:** Joblib
 - **Desenvolvimento Web:** Streamlit
+- **Geração de Relatórios:** XlsxWriter (Exportação para Excel)
 - **Visualização de Dados:** Matplotlib, Seaborn
 - **Controle de Versão:** Git & GitHub
 
@@ -77,15 +78,15 @@ A solução foi arquitetada utilizando práticas sólidas de Engenharia de Dados
 A aplicação encontra-se publicada na nuvem através do **Streamlit Community Cloud**, com um fluxo de deploy contínuo (CI/CD) conectado diretamente à branch `main` deste repositório.
 
 **Diferenciais da Infraestrutura:**
-- **Sincronização de Versões:** O arquivo `requirements.txt` trava as versões exatas das bibliotecas (Pandas, Scikit-learn, Joblib) usadas no treinamento, eliminando erros de descompactação do modelo em produção.
-- **Cache de Memória:** Implementação do decorador `@st.cache_resource` para manter o modelo de *Random Forest* residente na memória do servidor, garantindo inferências em milissegundos.
+- **Sincronização de Versões:** O arquivo `requirements.txt` trava as versões exatas de todas as bibliotecas (incluindo o motor gráfico e o gerador de planilhas), eliminando incompatibilidades do modelo em produção.
+- **Inferências em Milissegundos:** O modelo de *Random Forest* permanece residente na memória do servidor, garantindo respostas imediatas assim que o formulário é validado.
 
 ---
 
 ## 📊 Impacto Estratégico
 
-Esta solução comprova a viabilidade da aplicação prática de Inteligência Artificial no cotidiano hospitalar, garantindo:
+Esta solução comprova a viabilidade da aplicação prática de Ciência de Dados no cotidiano corporativo e hospitalar, garantindo:
 
-- **Escalabilidade:** Uma ferramenta web leve que elimina a necessidade de softwares locais pesados.
-- **Confiabilidade:** Padronização diagnóstica através de um algoritmo robusto contra variabilidade clínica.
-- **Eficiência:** Redução drástica de esforço manual em cálculos de triagem nutricional.
+- **Escalabilidade:** Uma ferramenta web leve que elimina a necessidade de softwares locais ou instalações pesadas.
+- **Confiabilidade:** Padronização do diagnóstico através de um algoritmo robusto contra variabilidade clínica humana.
+- **Eficiência:** Redução drástica do esforço manual em cálculos de triagem nutricional e geração de relatórios de avaliação.
