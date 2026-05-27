@@ -2,7 +2,7 @@
   <img src="https://raw.githubusercontent.com/maikej910-del/notebooks-Grupo_45/main/logo.jpeg" alt="Logo Terra Fita" width="250">
 </div>
 
-# 🏥 Terra Fita: Sistema Preditivo de Diagnóstico Ponderal
+# 🏥 Terra Fit: Sistema Preditivo de Diagnóstico Ponderal
 
 ## Tech Challenge FIAP (Fase 4) - Grupo 45 | Machine Learning aplicado à Saúde
 
