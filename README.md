@@ -12,7 +12,7 @@
 
 ## 📌 Visão Geral Executiva
 
-A **Terra Fita** nasce como uma marca e um conceito de inteligência voltados para a medicina preventiva e a análise de dados clínicos. O nome e sua identidade visual representam o equilíbrio entre o cuidado humano e a precisão tecnológica, unindo o acolhimento à exatidão analítica dos dados.
+A **Terra Fit** nasce como uma marca e um conceito de inteligência voltados para a medicina preventiva e a análise de dados clínicos. O nome e sua identidade visual representam o equilíbrio entre o cuidado humano e a precisão tecnológica, unindo o acolhimento à exatidão analítica dos dados.
 
 Este projeto foi desenvolvido como parte do Tech Challenge da FIAP (Fase 4) com foco na construção de um pipeline de Machine Learning de ponta a ponta para apoio à tomada de decisão clínica.
 
