@@ -1,8 +1,8 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/maikej910-del/notebooks-Grupo_45/main/logo.jpeg" alt="Logo Grupo 45" width="250">
+  <img src="https://raw.githubusercontent.com/maikej910-del/notebooks-Grupo_45/main/logo.jpeg" alt="Logo Terra Fita" width="250">
 </div>
 
-# 👑 Sistema Preditivo: Diagnóstico de Peso Corporal
+# 🏥 Terra Fita: Sistema Preditivo de Diagnóstico Ponderal
 
 ## Tech Challenge FIAP (Fase 4) - Grupo 45 | Machine Learning aplicado à Saúde
 
@@ -11,6 +11,8 @@
 ---
 
 ## 📌 Visão Geral Executiva
+
+A **Terra Fita** nasce como uma marca e um conceito de inteligência voltados para a medicina preventiva e a análise de dados clínicos. O nome e sua identidade visual representam o equilíbrio entre o cuidado humano e a precisão tecnológica, unindo o acolhimento à exatidão analítica dos dados.
 
 Este projeto foi desenvolvido como parte do Tech Challenge da FIAP (Fase 4) com foco na construção de um pipeline de Machine Learning de ponta a ponta para apoio à tomada de decisão clínica.
 
@@ -53,100 +55,6 @@ A solução foi arquitetada utilizando práticas sólidas de Engenharia de Dados
 
 ---
 
-## 📊 Diagnóstico Analítico e Inteligência de Negócio
-
-Esta seção consolida os principais cruzamentos de dados dinâmicos avaliados pelo algoritmo, indo além da leitura isolada de variáveis para entender a sinergia dos fatores de risco.
-
-### Tema A: Perfil Demográfico e Dinâmica do IMC
-
-<div align="center">
-  <img src="https://raw.githubusercontent.com/maikej910-del/notebooks-Grupo_45/main/A1_faixa_etaria.png" width="600">
-</div>
-
-- **A1. Proporção por Faixa Etária:** A base exibe uma forte concentração em Jovens Adultos (93.3%), seguidos por uma participação residual de Adolescentes (2.9%). Isto caracteriza um dataset focado majoritariamente em indivíduos em idade produtiva.
-
-<div align="center">
-  <img src="https://raw.githubusercontent.com/maikej910-del/notebooks-Grupo_45/main/A2_evolucao_imc.png" width="600">
-</div>
-
-- **A2. Linha de Tendência do IMC:** A análise epidemiológica confirma um avanço progressivo do Índice de Massa Corporal (IMC) médio à medida que o ciclo biológico do paciente avança, registrando saltos visíveis nas transições de faixa etária e atingindo a média crítica em idosos.
-
-<div align="center">
-  <img src="https://raw.githubusercontent.com/maikej910-del/notebooks-Grupo_45/main/A3_genero_classe.png" width="600">
-</div>
-
-- **A3. Assimetria de Gênero:** O mapeamento aponta desvios críticos nas faixas de risco elevado. Homens representam a maioria esmagadora da classe de Sobrepeso II, enquanto os quadros graves de Obesidade Tipo III (grau mais severo da patologia) têm associação estatística quase exclusiva com o gênero feminino.
-
----
-
-### Tema B: Matriz Comportamental e Hábitos Nutricionais
-
-<div align="center">
-  <img src="https://raw.githubusercontent.com/maikej910-del/notebooks-Grupo_45/main/B1_refeicoes_diarias.png" width="600">
-</div>
-
-- **B1. Padrão de Fracionamento:** O volume diário de alimentação aponta que a maioria dos pacientes (58.7%) realiza o padrão de 3 refeições por dia. Isso indica que a desregulação do peso está atrelada à densidade calórica e à qualidade nutricional da rotina, e não necessariamente ao número de pausas alimentares.
-
-<div align="center">
-  <img src="https://raw.githubusercontent.com/maikej910-del/notebooks-Grupo_45/main/B2_consumo_vegetais.png" width="600">
-</div>
-
-- **B2. Consumo de Fibras:** Registra-se um comportamento irregular em relação à ingestão de micronutrientes, com a maior fatia da amostra total (81.0%) admitindo o consumo de vegetais apenas de forma ocasional ("Às vezes").
-
-<div align="center">
-  <img src="https://raw.githubusercontent.com/maikej910-del/notebooks-Grupo_45/main/B3_alta_caloria.png" width="600">
-</div>
-
-- **B3. Taxa de Alta Caloria:** A correlação entre caloria vazia e obesidade é quase linear. Enquanto categorias de peso saudável apresentam taxas menores, a Obesidade Tipo III atinge praticamente 100% de prevalência no consumo de alimentos altamente calóricos.
-
----
-
-### Tema C: Estilo de Vida e Fatores de Risco Combinados
-
-<div align="center">
-  <img src="https://raw.githubusercontent.com/maikej910-del/notebooks-Grupo_45/main/C1_atividade_fisica.png" width="600">
-</div>
-
-- **C1. Sedentarismo Estrutural:** A inatividade física atua de forma alarmante no dataset, visto que 56.4% da base reporta padrões de sedentarismo ("Nenhuma") ou rotina muito baixa (apenas 1 a 2 dias por semana).
-
-<div align="center">
-  <img src="https://raw.githubusercontent.com/maikej910-del/notebooks-Grupo_45/main/C2_score_atividade.png" width="600">
-</div>
-
-- **C2. Sensibilidade da Feature Composta:** O indicador unificado *Score_Atividade* (Frequência x Tempo) exibe alta capacidade discriminatória para o algoritmo. O indicador cai de forma abrupta de 1.15 nos pacientes em Peso Normal para apenas 0.05 no grupo com Obesidade Tipo III.
-
-<div align="center">
-  <img src="https://raw.githubusercontent.com/maikej910-del/notebooks-Grupo_45/main/C3_historico_familiar.png" width="600">
-</div>
-
-- **C3. Carga Genética Hereditária:** A influência genética configura-se como um dos maiores fatores de risco transversais mapeados. Exatamente 100% de todos os indivíduos diagnosticados com Obesidade Tipo III possuem histórico familiar direto de sobrepeso.
-
-<div align="center">
-  <img src="https://raw.githubusercontent.com/maikej910-del/notebooks-Grupo_45/main/C4_consumo_alcool.png" width="600">
-</div>
-
-- **C4. Gatilho Metabólico (Álcool):** A taxa de ingestão regular de álcool tem seu pico na faixa etária dos Jovens Adultos (4.9%), funcionando como um catalisador calórico inicial antes da desregulação metabólica crônica da meia-idade.
-
----
-
-## 👤 Segmentação Estratégica por Personas Clínicas
-
-Com base nos padrões comportamentais identificados nas árvores de decisão do modelo, consolidamos a base de dados em **3 Personas Clínicas de Risco** para direcionamento de intervenções preventivas hospitalares:
-
-1. **Persona 1 - O Jovem Adulto Sedentário (Risco de Transição):** Paciente entre 18 e 35 anos, com histórico de consumo de álcool frequente e baixo escore de atividade física (0 a 1 dia/semana). Utiliza alimentos rápidos de alta caloria como compensação da rotina. Atualmente classificado em Sobrepeso II ou Obesidade I, apresentando a maior probabilidade de progressão de gravidade clínica nos próximos 5 anos.
-2. **Persona 2 - A Paciente com Predisposição Genética Crônica:** Paciente do sexo feminino com coocorrência de histórico familiar positivo para obesidade em 100% dos casos. Apresenta metabolismo vulnerável à desregulação calórica rápida, estando correlacionada diretamente à Obesidade Tipo III. Exige abordagens terapêuticas intensivas devido à alta barreira genética.
-3. **Persona 3 - O Paciente Hiperfracionador Calórico:** Paciente que realiza 4 ou mais refeições diárias e mantém o hábito de lanchar constantemente entre as pausas. Embora declare comer vegetais "Às vezes", o alto consumo calórico combinado atua em sinergia disparando o IMC médio para patamares graves, concentrando-se na Obesidade Tipo II.
-
----
-
-## 📈 Diretrizes Clínicas e Recomendações Hospitalares
-
-- **Protocolo de Triagem Automatizado com IA:** Integrar este sistema preditivo (`app.py`) logo na recepção do hospital ou ambulatório de especialidades. Ao capturar dados simples de hábitos de vida e calcular o IMC no backend, o hospital reduz o tempo de triagem clínica e encaminha o paciente de risco preventivo ao especialista em milissegundos.
-- **Campanhas de Intervenção Precoce Focalizada:** Visto que o salto crítico do IMC médio ocorre na transição de Jovem Adulto para a Meia Idade, o hospital deve focar programas de medicina preventiva direcionados à faixa dos 18 aos 35 anos, atuando na conscientização da sinergia destrutiva entre sedentarismo e abuso calórico antes que o quadro se agrave.
-- **Plano de Linha de Cuidado Personalizado por Persona:** Utilizar a classificação do modelo para segmentar o atendimento. As Personas 1 e 3 devem ser direcionadas a programas focados em reeducação de hábitos alimentares e ganho de score de atividade física. Já a Persona 2 deve receber suporte de alta complexidade (genética/endocrinologia) desde o primeiro dia de admissão clínica.
-
----
-
 ## 📂 Estrutura do Repositório
 
     notebooks-grupo_45/
@@ -156,17 +64,7 @@ Com base nos padrões comportamentais identificados nas árvores de decisão do 
     ├── modelo_obesidade_rf.pkl      # Modelo de ML treinado e serializado
     ├── requirements.txt             # Dependências e versões exatas para o deploy
     ├── Obesity.csv                  # Base de dados bruta utilizada na ingestão
-    ├── log.jpeg                     # Logotipo oficial do projeto
-    ├── A1_faixa_etaria.png          # Gráfico de proporção por idade
-    ├── A2_evolucao_imc.png          # Gráfico de evolução do IMC
-    ├── A3_genero_classe.png         # Gráfico de gênero por classe de peso
-    ├── B1_refeicoes_diarias.png     # Gráfico de refeições por dia
-    ├── B2_consumo_vegetais.png      # Gráfico de consumo de vegetais
-    ├── B3_alta_caloria.png          # Gráfico de impacto calórico
-    ├── C1_atividade_fisica.png      # Gráfico de atividade física semanal
-    ├── C2_score_atividade.png       # Gráfico do escore de exercício
-    ├── C3_historico_familiar.png    # Gráfico de herança genética familiar
-    ├── C4_consumo_alcool.png        # Gráfico de consumo de álcool por idade
+    ├── log.jpeg                     # Logotipo oficial do projeto (Terra Fita)
     └── obesity_tratada_grupo45.csv  # Base consolidada exportada para consumo em Data Viz
 
 ---
