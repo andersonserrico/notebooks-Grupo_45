@@ -64,7 +64,7 @@ if st.button("Gerar Diagnóstico"):
             'Refeicoes_Dia': ref_map.get(refeicoes, 3), 'Consumo_Entre_Refeicoes': lanches,
             'Fumante': fumante, 'Consumo_Agua': h2o_map.get(agua, 2),
             'Monitora_Calorias': monitora_cal, 'Frequencia_Ativ_Fisica': atv_map.get(ativ_fisica, 0),
-            'Tempo_Exercicio': tel_map.get(telas, 0), 'Consumo_Alcool': alcool,
+            'Tempo_Telas': tel_map.get(telas, 0), 'Consumo_Alcool': alcool,
             'Meio_Transporte': transporte, 'Score_Atividade': score_atv
         }])
 
