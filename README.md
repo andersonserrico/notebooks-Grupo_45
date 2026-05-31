@@ -8,7 +8,7 @@
 
 🔗 **Acesse a aplicação em produção:** [Clique aqui para abrir o Sistema](https://notebooks-grupo45-xngddkmfv7koeyvmubsqco.streamlit.app/)
 
-🔗 **Apresentação do Modelo, Análises e Amplicação:** [Clique aqui para o link do video](https://drive.google.com/file/d/1rXR_Ip1aPwwlyzRgXXTP1NaM2BXZ8r61/view?usp=drive_link)
+🔗 **Apresentação do Modelo, Análises e Aplicação:** [Clique aqui para o link do video](https://drive.google.com/file/d/1rXR_Ip1aPwwlyzRgXXTP1NaM2BXZ8r61/view?usp=drive_link)
 
 
 ---
